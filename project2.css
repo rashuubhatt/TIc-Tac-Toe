@@ -1,0 +1,366 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(73, 112, 183);
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1{
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin: clamp(15px, 5vw, 30px);
+}
+
+.container {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(15px, 4vw, 30px);
+    padding: clamp(15px, 3vw, 25px);
+}
+
+.game{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: clamp(220px, 56vmin, 450px);
+    width: clamp(220px, 56vmin, 450px);
+    gap: clamp(8px, 1.4vmin, 15px);
+}
+
+.box{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: clamp(8px, 2vmin, 20px);
+    border: none;
+    font-size: clamp(2rem, 8vmin, 5rem);
+    color: crimson;
+    background-color: rgb(31, 91, 21);
+    transition: all 0.3s ease;
+}
+
+.box:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: rgb(32, 145, 12);
+}
+
+#reset-btn{
+    height: clamp(45px, 10vmin, 100px);
+    width: clamp(150px, 32vmin, 350px);
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    border-radius: clamp(10px, 1.5vmin, 20px);
+    border: none;
+    margin-top: clamp(20px, 15px, 30px);
+    transition: all 0.2s ease;
+}
+
+#reset-btn:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+.msg-container{
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: clamp(30px, 5vmin, 60px);
+    padding: clamp(20px, 3vw, 40px);
+}
+
+#msg{
+    font-size: clamp(2rem, 8vmin, 5rem);
+    color: chartreuse;
+    text-align: center;
+    padding: clamp(10px, 2vw, 20px);
+}
+
+#new-btn{
+    height: clamp(40px, 7vw, 60px);
+    width: clamp(120px, 25vw, 180px);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: white;
+    background-color: black;
+    border-radius: clamp(10px, 1.5vmin, 20px);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#new-btn:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.hide{
+    display: none;
+}
+
+/* Media Query: Small phones (320px–480px) */
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin: 15px 0;
+    }
+    
+    .container {
+        gap: 12px;
+        padding: 10px;
+    }
+    
+    .game {
+        height: 220px;
+        width: 220px;
+        gap: 8px;
+    }
+    
+    .box {
+        font-size: 2rem;
+    }
+    
+    #reset-btn {
+        height: 45px;
+        width: 150px;
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+    
+    .msg-container {
+        min-height: 100vh;
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    #msg {
+        font-size: 2rem;
+    }
+    
+    #new-btn {
+        height: 40px;
+        width: 120px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Media Query: Large phones (481px–767px) */
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin: 20px 0;
+    }
+    
+    .container {
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .game {
+        height: 270px;
+        width: 270px;
+        gap: 9px;
+    }
+    
+    .box {
+        font-size: 2.5rem;
+    }
+    
+    #reset-btn {
+        height: 50px;
+        width: 200px;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+    
+    .msg-container {
+        min-height: 100vh;
+        gap: 25px;
+        padding: 20px;
+    }
+    
+    #msg {
+        font-size: 2.5rem;
+    }
+    
+    #new-btn {
+        height: 45px;
+        width: 140px;
+        font-size: 1rem;
+    }
+}
+
+/* Media Query: Tablets and iPads (768px–1024px) */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin: 25px 0;
+    }
+    
+    .container {
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .game {
+        height: 350px;
+        width: 350px;
+        gap: 10px;
+    }
+    
+    .box {
+        font-size: 3.5rem;
+    }
+    
+    #reset-btn {
+        height: 60px;
+        width: 250px;
+        font-size: 1.05rem;
+        margin-top: 25px;
+    }
+    
+    .msg-container {
+        min-height: 100vh;
+        gap: 30px;
+        padding: 25px;
+    }
+    
+    #msg {
+        font-size: 3.5rem;
+    }
+    
+    #new-btn {
+        height: 50px;
+        width: 160px;
+        font-size: 1.05rem;
+    }
+}
+
+/* Media Query: Laptops (1025px–1440px) */
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    body {
+        padding: 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    .container {
+        gap: 25px;
+        padding: 25px;
+    }
+    .game {
+        height: 350px;
+        width: 350px;
+        gap: 10px;
+    }
+    .box {
+        font-size: 3.5rem;
+    }
+    #reset-btn {
+        height: 60px;
+        width: 200px;
+        font-size: 1.1rem;
+        margin-top: 20px;
+    }
+    .msg-container {
+        min-height: 100vh;
+        gap: 35px;
+        padding: 30px;
+    }
+    #msg {
+        font-size: 4rem;
+    }
+    #new-btn {
+        height: 55px;
+        width: 170px;
+        font-size: 1rem;
+    }
+}
+/* Media Query: Large desktop screens (1441px and above) */
+
+@media screen and (min-width: 1441px) {
+    body {
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 3rem;
+        margin: 40px 0;
+    }
+    
+    .container {
+        gap: 30px;
+        padding: 30px;
+    }
+    
+    .game {
+        height: 420px;
+        width: 420px;
+        gap: 12px;
+    }
+    
+    .box {
+        font-size: 4rem;
+    }
+    
+    #reset-btn {
+        height: 80px;
+        width: 350px;
+        font-size: 1.2rem;
+        margin-top: 35px;
+    }
+    
+    .msg-container {
+        min-height: 100vh;
+        gap: 40px;
+        padding: 40px;
+    }
+    
+    #msg {
+        font-size: 4.5rem;
+    }
+    
+    #new-btn {
+        height: 60px;
+        width: 180px;
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
